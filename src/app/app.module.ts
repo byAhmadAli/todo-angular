@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { TodosComponent } from './todos/todos.component';
-import { TodosHeaderComponent } from './todos/todo-header/todo-header.component';
-import { TodoListComponent } from './todos/todo-list/todo-list.component';
-import { TodoFooterComponent } from './todos/todo-footer/todo-footer.component';
+import { TodosComponent } from './Components/todos/todos.component';
+import { TodosHeaderComponent } from './Components/todos/todo-header/todo-header.component';
+import { TodoListComponent } from './Components/todos/todo-list/todo-list.component';
+import { TodoFooterComponent } from './Components/todos/todo-footer/todo-footer.component';
+import { TodosService } from './Services/todos/todos.service';
 
 @NgModule({
   declarations: [
@@ -19,8 +21,11 @@ import { TodoFooterComponent } from './todos/todo-footer/todo-footer.component';
   imports: [
     BrowserModule,
     NgbModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    TodosService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

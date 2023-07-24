@@ -1,0 +1,16 @@
+<div class="card-body">
+  <div class="form-floating">
+    <input type="test" class="form-control" placeholder="✍️ Add item..." (keydown.enter)="addTask($event)"/>
+    <label for="floatingInput">✍️ Add item</label>
+  </div>
+</div>
+<ul class="list-group list-group-flush">
+  <li class="list-group-item" *ngFor="let task of todosList" >
+    <div class="checkbox">
+      <label [ngClass]="{'strike': task.isComplete}">
+        <input class="me-2" type="checkbox" value="" [checked]="task.isComplete" />
+        {{task.todoName}}
+      </label>
+    </div>
+  </li>
+</ul>
